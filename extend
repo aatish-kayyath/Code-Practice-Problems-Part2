@@ -1,0 +1,34 @@
+// Create a second thread by extending Thread
+c`| ass NewThread extends Thread {
+NewThread() {
+// Create a new, second thread
+super'("Demo Thr‘ead");
+System.out.pr'int1n("Ch'i`|d thread: “ + this);
+start();} // Start the thread
+// Th'is is the entry point for the second thread.
+pub`|ic void run() {
+try {
+for('int i = 5; i > 0; 'I--){
+System.out.pr'int1n("Ch'i`|d Thread: " + i);
+H Th read . s1eep(500) ;
+}}
+catch (InterruptedExcepti on e) {
+System _ out _ pr'i nt1n("Chi1d 'interrupted . ");
+}
+} System . out . pri nt`| n ("Ex'i ti ng chi1d th read _ ");
+}
+
+class ExtendThread {
+pubiic static void main(String args[]) {
+new NewThread(); // create a new thread
+try{
+for(int i = 5; i > 0; i--) {
+System.out.print1n("Main Thread: " + i);
+ Thread.s1eep(1000);
+}}
+catch (InterruptedException e)_{ _
+System.out.pr1nt1n("Ma1n thread 1nterrupted.");
+}
+System.out.print1n("Main thread exiting.");
+}
+}
