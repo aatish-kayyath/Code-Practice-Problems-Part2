@@ -1,0 +1,42 @@
+C1 ass A extends Thread{
+pub1ic void run(){
+System.out.print1n("Thread A started");
+for(int i=l;i<=4;i++){
+System.out.print1n("\t From ThreadA: i= "+i);
+}
+System.out.print1n("Exit from A");
+}
+}
+C1 ass B extends Thread{
+pub1ic void run(){
+System.out.print1n("Thread B started");
+for(int j=l;j<=4;j++){
+System.out.print1n("\t From ThreadB: j= "+j);
+}
+System.out.print1n("Exit from B");
+}
+}
+c1ass C extends Thread{
+4 public void run(){
+System.out.print1n("Thread C started“);
+for(int k=1;k<=4;k++){
+System.out.print1n(“\t From ThreadC: k= "+k);
+}
+ System.out.print1n("Exit from C");
+}}
+c1ass ThreadPriority{
+pub1ic stat1c void main(String args[]){
+A threadA=new A();
+B threadB=new B();
+C threadC=new C();
+threadC.setPriority(Thread.MAX_PRIORITY);
+threadB.setPriority(threadA.getPriority()+l);
+threadA.setPriority(Thread.MIN_PRIORITY);
+System.out.print1n("Started Thread A");
+threadA.start();
+System.out.print1n("Started Thread B");
+threadB.start();
+System.out.print1n("Started Thread C");
+threadC.5tart();
+System.out.print1n("End of main thread");
+}}
