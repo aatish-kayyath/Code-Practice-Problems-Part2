@@ -1,0 +1,35 @@
+c1ass computeTab]e{ 
+synchron1zed pub11c vo1d compute(1nt num){
+fnr(int i=1; i<=10; i++){
+System.out.print1n(num + “*" + i +"="+num*i);
+try
+{
+ Thread.s1eep(1000);
+}
+catch(Exception ex)
+{
+System.out.print1n(ex);
+}
+}
+}
+}
+class MyThread extends Thread{
+pub1ic computeTab1e en;
+pub1ic int n;
+pub1ic MyThread(computeTab1e e,int num){
+en=e;
+n=num;
+}
+pub`|1c vo1d run(){
+en.compute(n);
+}
+}
+pub1ic c1ass MainThread{
+pub1ic static void main(String args[]){
+computeTab1e en = new computeTab1e();
+MyThread tl = new MyThread(en , 5);
+MyThread t2 = new MyThread(en , 6);
+t1.start();
+t2.start();
+}
+}
