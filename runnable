@@ -1,0 +1,55 @@
+// Controlling the main Thread.
+class Curr‘entThreadDemo {
+public static void main(String args[]) {
+Thread t = Thread.curr'entThread();
+System.out.println("Current thread: “ + t);
+// change the name of the thread
+t.setName("My Thr'ead");
+Syst§m.out.println("After name change: " + t);
+try
+for(int n = 5; n > 0; n--){
+Shstem _ out . pri ntl n(n);
+} T read.sleep(1000);
+}
+catch (Inter‘ruptedException e) {
+System.out.println("Main thread interrupted")
+}
+}
+}
+
+
+// Create a second4thread.
+c1ass NewThread implements Runnable {
+Thread t;
+NewThread() {
+// Create a new, second thread
+t = new Thread(this, "DEMO Thread");
+System.out.print1n(“Chi1d thread: " + t);
+} t.start(); // Start the thread
+// This is the entry point for the second thread.
+public void run() {
+try {
+for(int i = 5; i > 0; i--) {
+SH5tem.out.print1n(“Chi1d Thread: “ + i);
+ T read.s1eep(500);
+}}
+catch (InterruptedException e)_{ _
+System.out.print1n("Ch11d 1nterrupted.");
+}
+System.out.print1n(“Exiting child thread.");
+}
+}
+class ThreadDemo {
+public static void main(String args[ ] ) {
+new NewThread(); // create a new thread
+try{
+for(int i = 5; i > 0; i--) {
+System.out.print1n("Main Thread: “ + i);
+ Thread.s1eep(1000);
+}}
+catch (InterruptedException e)_{ _
+System.out.pr1nt1n("Ma1n thread 1nterrupted.");
+}
+System.out.print1n("Main thread exiting.");
+}
+}
